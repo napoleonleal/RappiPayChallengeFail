@@ -1,0 +1,129 @@
+2022-09-11 16:24:42,387 : INFO : Start of Training
+2022-09-11 16:24:42,387 : INFO : Run_id:2022-09-11_162442_148837372
+2022-09-11 16:24:42,387 : INFO : Start of Data Load, validation and transformation
+2022-09-11 16:24:42,387 : INFO : Start of Archiving Old Rejected Files...
+2022-09-11 16:24:42,387 : INFO : End of Archiving Old Rejected Files...
+2022-09-11 16:24:42,387 : INFO : Start of Archiving Old Validated Files...
+2022-09-11 16:24:42,388 : INFO : End of Archiving Old Validated Files...
+2022-09-11 16:24:42,388 : INFO : Start of Archiving Old Processed Files...
+2022-09-11 16:24:42,388 : INFO : End of Archiving Old Processed Files...
+2022-09-11 16:24:42,389 : INFO : Start of Archiving Old Result Files...
+2022-09-11 16:24:42,389 : INFO : End of Archiving Old Result Files...
+2022-09-11 16:24:42,389 : INFO : Start of Reading values From Schema...
+2022-09-11 16:24:42,389 : INFO : End of Reading values From Schema...
+2022-09-11 16:24:42,389 : INFO : Start of Validating Column Length...
+2022-09-11 16:24:42,476 : INFO : End of Validating Column Length...
+2022-09-11 16:24:42,477 : INFO : Start of Validating Missing Values...
+2022-09-11 16:24:42,562 : INFO : End of Validating Missing Values...
+2022-09-11 16:24:42,563 : INFO : Start of Replacing Missing Values with NULL...
+2022-09-11 16:24:42,865 : INFO : ds_challenge_data_2022.csv: File Transformed successfully!!
+2022-09-11 16:24:42,866 : INFO : End of Replacing Missing Values with NULL...
+2022-09-11 16:24:42,866 : INFO : Start of Creating Table...
+2022-09-11 16:24:42,867 : INFO : Opened training database successfully
+2022-09-11 16:24:42,871 : INFO : CREATE TABLE training_raw_data_t column_name
+2022-09-11 16:24:42,874 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,876 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,879 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,881 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,885 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,887 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,890 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,892 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,894 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,897 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,900 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,903 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,905 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,908 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,910 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2022-09-11 16:24:42,911 : INFO : End of Creating Table...
+2022-09-11 16:24:42,912 : INFO : Opened training database successfully
+2022-09-11 16:24:42,912 : INFO : Start of Inserting Data into Table...
+2022-09-11 16:24:42,919 : ERROR : Exception raised while Inserting Data into Table: near "año": syntax error 
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\database\database_operation.py", line 72, in insert_data
+    conn.execute("INSERT INTO "+table_name+" values ({values})".format(values=(to_db)))
+sqlite3.OperationalError: near "año": syntax error
+2022-09-11 16:24:42,921 : INFO : End of Inserting Data into Table...
+2022-09-11 16:24:42,921 : INFO : Start of Exporting Data into CSV...
+2022-09-11 16:24:42,922 : INFO : Opened training database successfully
+2022-09-11 16:24:42,923 : INFO : End of Exporting Data into CSV...
+2022-09-11 16:24:42,924 : INFO : Start of Moving Processed Files...
+2022-09-11 16:24:42,924 : INFO : End of Moving Processed Files...
+2022-09-11 16:24:42,924 : INFO : End of Data Load, validation and transformation
+2022-09-11 16:24:42,924 : INFO : Start of Preprocessing...
+2022-09-11 16:24:42,924 : INFO : Start of reading dataset...
+2022-09-11 16:24:42,933 : INFO : End of reading dataset...
+2022-09-11 16:24:42,933 : INFO : Start of Dropping Columns...
+2022-09-11 16:24:42,934 : ERROR : Exception raised while Dropping Columns:"['dispositivodcto'] not found in axis"
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 29, in drop_columns
+    self.useful_data = self.data.drop(labels=self.columns, axis=1)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\frame.py", line 4957, in drop
+    return super().drop(
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\indexes\base.py", line 6661, in drop
+    raise KeyError(f"{list(labels[mask])} not found in axis")
+KeyError: "['dispositivodcto'] not found in axis"
+2022-09-11 16:24:42,944 : ERROR : Unsuccessful End of Preprocessing...
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 29, in drop_columns
+    self.useful_data = self.data.drop(labels=self.columns, axis=1)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\frame.py", line 4957, in drop
+    return super().drop(
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\indexes\base.py", line 6661, in drop
+    raise KeyError(f"{list(labels[mask])} not found in axis")
+KeyError: "['dispositivodcto'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 119, in preprocess_trainset
+    data = self.drop_columns(data, ['transaction_id', 'user_id', 'fecha', 'dispositivo' 'dcto', 'cashback'])
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 34, in drop_columns
+    raise Exception()
+Exception
+2022-09-11 16:24:42,945 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 29, in drop_columns
+    self.useful_data = self.data.drop(labels=self.columns, axis=1)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\frame.py", line 4957, in drop
+    return super().drop(
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\generic.py", line 4267, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\generic.py", line 4311, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\core\indexes\base.py", line 6661, in drop
+    raise KeyError(f"{list(labels[mask])} not found in axis")
+KeyError: "['dispositivodcto'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 119, in preprocess_trainset
+    data = self.drop_columns(data, ['transaction_id', 'user_id', 'fecha', 'dispositivo' 'dcto', 'cashback'])
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 34, in drop_columns
+    raise Exception()
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\training\train_model.py", line 27, in training_model
+    self.X, self.y = self.preProcess.preprocess_trainset()
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\preprocess\preprocessor.py", line 133, in preprocess_trainset
+    raise Exception
+Exception

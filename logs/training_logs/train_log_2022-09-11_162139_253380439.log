@@ -1,0 +1,94 @@
+2022-09-11 16:21:39,716 : INFO : Start of Training
+2022-09-11 16:21:39,716 : INFO : Run_id:2022-09-11_162139_253380439
+2022-09-11 16:21:39,717 : INFO : Start of Data Load, validation and transformation
+2022-09-11 16:21:39,717 : INFO : Start of Archiving Old Rejected Files...
+2022-09-11 16:21:39,717 : INFO : End of Archiving Old Rejected Files...
+2022-09-11 16:21:39,717 : INFO : Start of Archiving Old Validated Files...
+2022-09-11 16:21:39,717 : INFO : End of Archiving Old Validated Files...
+2022-09-11 16:21:39,717 : INFO : Start of Archiving Old Processed Files...
+2022-09-11 16:21:39,720 : INFO : End of Archiving Old Processed Files...
+2022-09-11 16:21:39,720 : INFO : Start of Archiving Old Result Files...
+2022-09-11 16:21:39,721 : INFO : End of Archiving Old Result Files...
+2022-09-11 16:21:39,721 : INFO : Start of Reading values From Schema...
+2022-09-11 16:21:39,721 : INFO : End of Reading values From Schema...
+2022-09-11 16:21:39,721 : INFO : Start of Validating Column Length...
+2022-09-11 16:21:39,723 : ERROR : Exception raised while Validating Column Length: UTF-16 stream does not start with BOM
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 42, in validate_column_length
+    csv = pd.read_csv(self.data_path + '/' + file, encoding='utf-16')
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 678, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 575, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 932, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1234, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 75, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 544, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 633, in pandas._libs.parsers.TextReader._get_header
+  File "pandas\_libs\parsers.pyx", line 847, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas\_libs\parsers.pyx", line 1952, in pandas._libs.parsers.raise_parser_error
+UnicodeError: UTF-16 stream does not start with BOM
+2022-09-11 16:21:39,724 : ERROR : Unsuccessful End of Data Load, validation and transformation
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 179, in validate_trainset
+    self.validate_column_length(number_of_columns)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 55, in validate_column_length
+    raise e
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 42, in validate_column_length
+    csv = pd.read_csv(self.data_path + '/' + file, encoding='utf-16')
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 678, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 575, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 932, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1234, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 75, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 544, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 633, in pandas._libs.parsers.TextReader._get_header
+  File "pandas\_libs\parsers.pyx", line 847, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas\_libs\parsers.pyx", line 1952, in pandas._libs.parsers.raise_parser_error
+UnicodeError: UTF-16 stream does not start with BOM
+2022-09-11 16:21:39,726 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 179, in validate_trainset
+    self.validate_column_length(number_of_columns)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 55, in validate_column_length
+    raise e
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 42, in validate_column_length
+    csv = pd.read_csv(self.data_path + '/' + file, encoding='utf-16')
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 678, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 575, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 932, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1234, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\venv\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 75, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 544, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 633, in pandas._libs.parsers.TextReader._get_header
+  File "pandas\_libs\parsers.pyx", line 847, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas\_libs\parsers.pyx", line 1952, in pandas._libs.parsers.raise_parser_error
+UnicodeError: UTF-16 stream does not start with BOM
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\training\train_model.py", line 26, in training_model
+    self.loadValidate.validate_trainset()
+  File "C:\Users\napol\PycharmProjects\rappipaychallenge\apps\ingestion\load_validate.py", line 189, in validate_trainset
+    raise Exception
+Exception

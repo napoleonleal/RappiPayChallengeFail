@@ -1,0 +1,19 @@
+{	"NumberofColumns" : 15,
+	"ColName": {
+      "transaction_id" : "INTEGER",
+      "user_id" : "INTEGER",
+      "género" : "VARCHAR",
+      "linea_tc" : "INTEGER",
+      "interes_tc" : "INTEGER",
+      "monto" : "FLOAT",
+      "fecha" : "VARCHAR",
+      "hora" : "INTEGER",
+      "establecimiento" : "INTEGER",
+      "ciudad" : "INTEGER",
+      "status_txn" : "INTEGER",
+      "is_prime" : "INTEGER",
+      "dcto" : "FLOAT",
+      "cashback" : "FLOAT",
+      "fraude" : "INTEGER"
+	}
+}
